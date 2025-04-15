@@ -100,8 +100,10 @@ app.get('/generate-timer', async (req, res) => {
 
     res.json({ imageUrl: url });
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: 'Failed to generate countdown image' });
+    console.error("❌ Puppeteer Error:", err.message);
+    console.error(err.stack);
+
+    res.status(500).json({ error: `Failed to generate countdown image: ${err.message}`, });
   }
 });
 
