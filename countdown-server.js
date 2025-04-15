@@ -108,9 +108,9 @@ async function generateCountdownImage({ targetDate, bgColor, textColor, filename
 
   const browser = await chromium.puppeteer.launch({
     args: chromium.args,
-    executablePath: await chromium.executablePath,
+    executablePath: await chromium.executablePath || '/usr/bin/chromium-browser',
     headless: chromium.headless,
-  });
+  })
 
   const page = await browser.newPage();
   await page.setViewport({ width: 360, height: 100 });
