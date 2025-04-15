@@ -1,9 +1,8 @@
 const express = require('express');
-const puppeteer = require('puppeteer');
+const chromium = require('chrome-aws-lambda');
 const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
-const chromium = require('chrome-aws-lambda');
 
 const app = express();
 app.use(cors());
