@@ -1,13 +1,11 @@
 /**
  * @type {import("puppeteer").Configuration}
  */
+
+// .puppeteerrc.cjs
 module.exports = {
-  // Download Chrome (default `skipDownload: false`).
-  chrome: {
-    skipDownload: false,
-  },
-  // Download Firefox (default `skipDownload: true`).
-  firefox: {
-    skipDownload: false,
+  defaultBrowser: 'chrome',
+  download: {
+    chromium: true,
   },
 };
