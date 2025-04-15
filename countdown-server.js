@@ -3,6 +3,7 @@ const puppeteer = require('puppeteer');
 const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
+const chromium = require('chrome-aws-lambda');
 
 const app = express();
 app.use(cors());
@@ -105,9 +106,10 @@ async function generateCountdownImage({ targetDate, bgColor, textColor, filename
     </html>
   `;
 
-  const browser = await puppeteer.launch({
-    headless: 'new',
-    args: ['--no-sandbox', '--disable-setuid-sandbox']
+  const browser = await chromium.puppeteer.launch({
+    args: chromium.args,
+    executablePath: await chromium.executablePath,
+    headless: chromium.headless,
   });
 
   const page = await browser.newPage();
