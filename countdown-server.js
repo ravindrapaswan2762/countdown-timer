@@ -105,6 +105,7 @@ app.get('/generate-timer', async (req, res) => {
   }
 });
 
-app.listen(5001, () => {
-  console.log('⏳ Countdown server running on http://localhost:5001');
+const PORT = process.env.PORT || 5001;
+app.listen(PORT, () => {
+  console.log(`⏳ Countdown server running on: ${PORT}`);
 });
