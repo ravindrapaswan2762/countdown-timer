@@ -5,6 +5,10 @@
   "scripts": {
     "start": "node countdown-server.js"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
   "dependencies": {
     "puppeteer": "^21.3.8", 
     "cors": "^2.8.5",
